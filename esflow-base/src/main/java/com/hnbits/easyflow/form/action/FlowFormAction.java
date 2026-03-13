@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hnbits.easyflow.form.logic.FlowFormLogic;
-import com.hnbits.easyflow.form.model.FlowForm;
+import com.asiainfo.cuc.ocdp.model.FlowForm;
 import com.hnbits.easyflow.form.po.FlowFormPo;
 import com.hnbits.easyflow.form.vo.FlowFormComponentLibrary;
 import com.hnbits.easyflow.form.vo.FlowFormItem;
@@ -25,7 +25,7 @@ import com.hnbits.easyjava.common.action.RestBaseAction;
 import com.hnbits.easyjava.common.logic.BaseLogic;
 import com.hnbits.easyjava.common.response.CommonResult;
 
-import cn.hutool.core.collection.CollUtil;
+import com.asiainfo.cuc.ocdp.model.FlowForm.CollUtil;
 import io.swagger.v3.oas.annotations.Operation;
 
 @Controller
