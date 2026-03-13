@@ -38,7 +38,7 @@ public class FormDataUpdateEventListener implements IEventListener {
 	private FlowFormDataLogic<FlowFormData, FlowFormDataPo, FlowFormDataVo> flowFormDataLogic;
 
 	/**
-	 * 待确认 更新map中key对应字段的值
+	 * 查询亚信产品折扣优惠力度
 	 */
 	@Override
 	public void execute(String flowInstId, Map<String, Object> params) {
