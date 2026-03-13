@@ -1,0 +1,28 @@
+# Build and Release Folders
+bin-debug/
+bin-release/
+[Oo]bj/
+[Bb]in/
+
+# Other files and folders
+.settings/
+
+# Executables
+*.swf
+*.air
+*.ipa
+*.apk
+
+# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
+# should NOT be excluded as they contain compiler settings and other important
+# information for Eclipse / Flash Builder.
+/esflow-base/target
+/esflow-base-api/target
+/esflow-base-api/logs
+/*.project
+/esflow-base/.project
+/esflow-base/.classpath
+/esflow-base/.factorypath
+/esflow-base-api/.project
+/esflow-base-api/.classpath
+/esflow-base-api/.factorypath

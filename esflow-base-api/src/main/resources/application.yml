@@ -1,0 +1,82 @@
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    com:
+      hnbits: 
+        fsservice: DEBUG
+      baomidou:
+        mybatisplus: DEBUG   
+
+mybatis-plus:
+  #mapper-locations: classpath*:mapper/*/*Dao.xml #xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）
+  #typeAliasesPackage: com.hnbits.**.model
+  # 配置slq打印日志
+  configuration:
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+    map-underscore-to-camel-case: true
+  type-handlers-package: com.hnbits.easyjava.common.mybatis.handler
+  global-config:
+    db-config:
+      logic-delete-field: deleted  #全局逻辑删除字段值 3.3.0开始支持，详情看下面。
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+springdoc:
+  api-docs:
+    #是否开启文档功能
+    enabled: false
+    #swagger后端请求地址
+    path: /api-docs
+  swagger-ui:
+    #自定义swagger前端请求路径，输入http:ip:port/docs会自动重定向到swagger页面
+    path: /docs
+    enabled: false
+    disable-swagger-default-url: true
+  group-configs:
+  - group: 系统管理
+    paths-to-match:
+    - /admin/**
+  packages-to-scan: com.hnbits
+spring:
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+      file-size-threshold: 5MB
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  main:
+    allow-bean-definition-overriding: true
+  profiles:
+    active: dev
+  flyway:
+    enabled: false
+flyway:
+  locations: classpath:db/migration
+esplat:
+  delayqueues:
+    queues:
+    - code: TASK_TIMEOUT
+      name: 任务审批超时,发送提醒通知
+      bean-name: TaskTimeoutHandler
+  code: 
+    length: 4
+    expireIn: 180
+    image: 
+      url: '/auth/form'
+      width: 80
+      height: 48
+    sms:
+      url: '/auth/mobile'
+      template-code: SMS_152466487
+  flow: 
+    core:
+      allow-no-role-user: true
+  config: 
+    multi-tenancy: false
+    login:
+      login-log: true
+      login-max-try-count: 5
+    pager:
+      page-no-params: pageNo
+      page-size-params: pageSize
